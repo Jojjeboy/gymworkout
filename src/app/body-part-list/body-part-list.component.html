@@ -5,5 +5,5 @@
 
 
 <ul class="list-group list-group-flush">
-    <li *ngFor="let bodyPart of bodyPartList" class="list-group-item">{{ bodyPart | titlecase }}</li>
+    <li *ngFor="let bodyPart of bodyPartList" class="list-group-item"><a [routerLink]="['/bodypart', bodyPart]">{{ bodyPart | titlecase }}</a></li>
 </ul>

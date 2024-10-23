@@ -1,0 +1,18 @@
+<h1>{{ exercise.name | titlecase }}</h1>
+<h5>Bodypart: {{ exercise.bodyPart | titlecase }}</h5>
+<h5>Equipment: {{ exercise.equipment | titlecase }}</h5>
+<h5>Target: {{ exercise.target | titlecase }}</h5>
+
+
+<img [src]="exercise.gifUrl" />
+
+<h5>Secondary muscles</h5>
+<ul class="list-group list-group-flush">
+    <li *ngFor="let sec of exercise.secondaryMuscles" class="list-group-item">{{ sec | titlecase }}</li>
+</ul>
+<br />
+<br />
+<h5>Instructions:</h5>
+<ul class="list-group list-group-flush list-group-numbered">
+    <li *ngFor="let inst of exercise.instructions" class="list-group-item">{{ inst }}</li>
+</ul>

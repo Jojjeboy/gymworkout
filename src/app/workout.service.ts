@@ -38,6 +38,10 @@ export class WorkoutService {
     return this.http.get<any>(this.apiBaseUrl +'exercises/bodyPart/' + bodyPart + '?limit=100000&offset=0', {'headers': this.headers})
   }
 
+  getExcerciseById(id: any){
+    return this.http.get<any>(this.apiBaseUrl +'exercises/exercise/' + id, {'headers': this.headers})
+  }
+
 
 
 }
