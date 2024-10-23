@@ -22,7 +22,7 @@ export class BodyPartListComponent {
     this.workoutService.getBodyPartList().subscribe({
       next: (data) => {
         this.bodyPartList = data;
-        //console.log(data);
+        //console.log(data);  
       },
       error: (err) => {
         console.log(err);
