@@ -1,27 +1,27 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, input, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { WorkoutService } from '../workout.service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-excercise',
+  selector: 'app-targets',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './excercise.component.html',
-  styleUrl: './excercise.component.scss'
+  templateUrl: './targets.component.html',
+  styleUrl: './targets.component.scss'
 })
-export class ExcerciseComponent {
+export class TargetsComponent {
   private workoutService = inject(WorkoutService);
   private activatedRoute = inject(ActivatedRoute);
-  exercise:any = {};
+  targetList:any = {};
 
   id:any = this.activatedRoute.snapshot.params['id'];
 
   constructor(){
-    this.workoutService.getExcercisesById(this.id).subscribe({
+    this.workoutService.getTargets().subscribe({
       next: (data) => {
-        this.exercise = data;
-        //console.log(data);
+        this.targetList = data;
+        console.log(data);
       },
       error: (err) => {
         console.log(err);

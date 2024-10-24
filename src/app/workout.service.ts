@@ -38,10 +38,24 @@ export class WorkoutService {
     return this.http.get<any>(this.apiBaseUrl +'exercises/bodyPart/' + bodyPart + '?limit=100000&offset=0', {'headers': this.headers})
   }
 
-  getExcerciseById(id: any){
+  getExcercisesById(id: any){
     return this.http.get<any>(this.apiBaseUrl +'exercises/exercise/' + id, {'headers': this.headers})
   }
 
+  getTargets(){
+    return this.http.get<any>(this.apiBaseUrl +'exercises/targetList', {'headers': this.headers})
+  }
 
+  getExcercisesByTarget(target: string){
+    return this.http.get<any>(this.apiBaseUrl +'exercises/target/' + target, {'headers': this.headers})
+  }
+
+  getEquipments(){
+    return this.http.get<any>(this.apiBaseUrl +'exercises/equipmentList', {'headers': this.headers})
+  }
+
+  getExcercisesByEquipment(equipment: string){
+    return this.http.get<any>(this.apiBaseUrl +'exercises/equipment/'+ equipment +'?limit=100000&offset=0', {'headers': this.headers})
+  }
 
 }

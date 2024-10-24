@@ -1,0 +1,7 @@
+<h1 class="display-5 fw-normal">Targets</h1>
+<p class="fs-5">Target areas</p>
+
+
+<ul class="list-group list-group-flush">
+    <li *ngFor="let target of targetList" class="list-group-item"><a [routerLink]="['/target/', target]">{{ target | titlecase }}</a></li>
+</ul>

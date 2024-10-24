@@ -1,0 +1,4 @@
+<H5>Equipment excercise: {{ equipment }}</H5>
+<ul class="list-group list-group-flush">
+    <li *ngFor="let exercise of exercises" class="list-group-item"><a [routerLink]="['/exercise', exercise.id]">{{ exercise.name | titlecase }}</a></li>
+</ul>

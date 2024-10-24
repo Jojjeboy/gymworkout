@@ -1,7 +1,7 @@
 <h1>{{ exercise.name | titlecase }}</h1>
-<h5>Bodypart: {{ exercise.bodyPart | titlecase }}</h5>
-<h5>Equipment: {{ exercise.equipment | titlecase }}</h5>
-<h5>Target: {{ exercise.target | titlecase }}</h5>
+<h5>Bodypart: <a [routerLink]="['/bodypart/', exercise.bodyPart]">{{ exercise.bodyPart | titlecase }}</a></h5>
+<h5>Equipment: <a [routerLink]="['/equipment/', exercise.equipment]">{{ exercise.equipment | titlecase }}</a></h5>
+<h5>Target: <a [routerLink]="['/target/', exercise.target]"> {{ exercise.target | titlecase }}</a></h5>
 
 
 <img [src]="exercise.gifUrl" width="300" />
