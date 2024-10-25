@@ -1,9 +1,9 @@
-<h1 class="display-5 fw-normal">Equipment</h1>
+<h1 class="display-5 fw-normal">{{ heading }}</h1>
 <p class="fs-5">This example shows how responsive offcanvas menus work within the navbar. For positioning of
     navbars, checkout the <a href="/docs/5.3/examples/navbar-static/">top</a> and <a
         href="/docs/5.3/examples/navbar-fixed/">fixed top</a> examples.</p>
 
 
 <ul class="list-group list-group-flush">
-    <li *ngFor="let equipment of equipments" class="list-group-item"><a [routerLink]="['/equipment', equipment]">{{ equipment| titlecase }}</a></li>
+    <li *ngFor="let excercise of excercises" class="list-group-item"><a [routerLink]="['/exercise', excercise.id]">{{ excercise.name | titlecase }}</a></li>
 </ul>

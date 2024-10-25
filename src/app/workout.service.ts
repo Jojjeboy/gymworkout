@@ -1,13 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, OnInit } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class WorkoutService {
+export class WorkoutService implements OnInit{
 
-  constructor() { }
+  excercises:any = [];
+  ngOnInit() {
+    
+  }
+
+  
+  constructor() { 
+    this.http.get('excercises.json').subscribe(res => {
+      this.excercises = res;
+      console.log('Local excercises loaded');
+    });
+  }
 
   private apiBaseUrl = 'https://exercisedb.p.rapidapi.com/';
   private apiKey = '62f197cbbfmsh6d4630ef948a97ep169244jsn078bdcf93423';

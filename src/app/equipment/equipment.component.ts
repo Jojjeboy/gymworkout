@@ -2,11 +2,13 @@ import { Component, inject } from '@angular/core';
 import { WorkoutService } from '../workout.service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ExcerciseComponent } from '../excercise/excercise.component';
+import { ExcerciseListComponent } from '../excercise-list/excercise-list.component';
 
 @Component({
   selector: 'app-equipment',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ExcerciseListComponent],
   templateUrl: './equipment.component.html',
   styleUrl: './equipment.component.scss'
 })
